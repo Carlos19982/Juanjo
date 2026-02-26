@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+    --primary-gold: #D4AF37;
+    --primary-gold-hover: #B8962E;
+    --bg-dark: #0A0A0A;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(212, 175, 55, 0.2);
+    --text-main: #FFFFFF;
+    --text-muted: rgba(255, 255, 255, 0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    /* Background setup */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/club-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* App Wrapper */
+#app {
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+}
+
+/* Premium Header */
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: var(--primary-gold);
+    text-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+    letter-spacing: -1px;
+}
+
+header p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: -5px;
+}
+
+/* Glass Card Component */
+.glass-card {
+    background: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+/* Premium Input Group (Refined with Fieldset/Legend) */
+.input-group {
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    position: relative;
+    padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+    margin-bottom: 2.5rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.01);
+}
+
+.input-group:focus-within {
+    border-color: var(--primary-gold);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+    background: rgba(212, 175, 55, 0.02);
+}
+
+.input-group legend {
+    color: var(--primary-gold);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0 1rem;
+    margin-left: 0.5rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.75rem 0.5rem;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    outline: none;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 0.9rem;
+}
+
+/* Admin Panel Specifics */
+
+/* Premium Button */
+.btn-premium {
+    width: 100%;
+    padding: 1.25rem;
+    background: transparent;
+    border: 1px solid var(--primary-gold);
+    border-radius: 12px;
+    color: var(--primary-gold);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-premium:hover {
+    background: var(--primary-gold);
+    color: black;
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+}
+
+.btn-premium:active {
+    transform: scale(0.98);
+}
+
+/* Spotify Results Styling (Panel) */
+#search-panel .backdrop-blur-md {
+    backdrop-filter: blur(20px);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+#spotify-results .spotify-track-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 12px;
+    padding: 1.25rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#spotify-results .spotify-track-item:hover {
+    background: rgba(212, 175, 55, 0.08);
+    border-color: var(--primary-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.spotify-track-item img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.track-info .track-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 2px;
+}
+
+.track-info .track-artist {
+    font-size: 0.9rem;
+    color: var(--primary-gold);
+    letter-spacing: 0.5px;
+}
+
+/* Search Panel */
+.search-panel-card {
+    background: rgba(10, 10, 10, 0.98);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.9), 0 0 30px rgba(212, 175, 55, 0.15);
+}
+
+.search-panel-close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(212, 175, 55, 0.1);
+    border: 2px solid #D4AF37;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-panel-close-btn:hover {
+    background: #D4AF37;
+}
+
+.search-panel-close-btn:hover svg {
+    stroke: #000;
+}
+
+.search-panel-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.search-panel-arrow-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(212, 175, 55, 0.08);
+    border: 2px solid #D4AF37;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-panel-arrow-btn:hover:not(:disabled) {
+    background: rgba(212, 175, 55, 0.25);
+    transform: scale(1.1);
+}
+
+.search-panel-arrow-btn:disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+.search-panel-arrow-btn:disabled svg {
+    stroke: rgba(212, 175, 55, 0.4);
+}
+
+.search-panel-page-info {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #D4AF37;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: rgba(212, 175, 55, 0.1);
+    padding: 0.5rem 1.25rem;
+    border-radius: 999px;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+/* Admin Panel Specifics */
+#requests-list>div {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    margin-bottom: 12px;
+    transition: transform 0.2s;
+}
+
+#requests-list>div:hover {
+    transform: translateX(5px);
+    border-color: var(--primary-gold);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--glass-border);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-gold);
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJMusic - Peticiones de Canciones</title>
+    <!-- Tailwind CSS (Estilos rápidos) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Librería de Iconos -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.0/lucide.min.js"></script>
+    <!-- Tu archivo de estilos personalizados -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+    <!-- Contenedor de la Aplicación -->
+    <div id="app" class="max-w-xl mx-auto w-full flex-grow flex flex-col p-6">
+
+        <!-- Cabecera -->
+        <header class="text-center py-12">
+            <h1>DJMusic</h1>
+            <p>Premium Song Request Portal</p>
+        </header>
+
+        <!-- Login Estándar -->
+        <div id="login-container" class="glass-card space-y-8">
+            <h2 class="text-2xl font-semibold text-center mb-6">¿Quién eres?</h2>
+
+            <fieldset class="input-group">
+                <legend>Tu Nombre</legend>
+                <input type="text" id="user-login-name" placeholder="Escribe tu nombre para entrar">
+            </fieldset>
+
+            <button onclick="standardLogin()" class="btn-premium">
+                Entrar
+            </button>
+        </div>
+
+        <!-- Menú de Usuario -->
+        <div id="user-menu" class="hidden">
+            <div class="glass-card">
+                <h2 class="text-xl font-semibold mb-8 text-center text-white/90">Enviar Petición</h2>
+
+                <div class="space-y-6">
+                    <fieldset class="input-group">
+                        <legend>Song Title</legend>
+                        <input type="text" id="song-name" placeholder="Escribe para buscar una canción..."
+                            autocomplete="off">
+                        <input type="hidden" id="album-image-url">
+                    </fieldset>
+
+                    <fieldset class="input-group !mb-4">
+                        <legend>Artist</legend>
+                        <input type="text" id="artist-name" placeholder="Nombre del artista">
+                    </fieldset>
+
+                    <button id="search-tracks"
+                        class="w-full py-3 mb-2 border border-primary-gold/30 rounded-xl text-primary-gold text-sm font-bold uppercase tracking-widest hover:bg-primary-gold/5 transition-all flex items-center justify-center gap-2">
+                        <i data-lucide="search" class="w-4 h-4"></i> Buscar Canciones
+                    </button>
+
+                    <!-- Panel de Resultados de Búsqueda -->
+                    <div id="search-panel" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4">
+                        <div class="absolute inset-0 bg-black/90 backdrop-blur-xl" onclick="toggleSearchPanel(false)">
+                        </div>
+                        <div class="search-panel-card w-full max-w-lg relative z-10">
+                            <div class="flex justify-between items-center mb-6">
+                                <h3 class="text-xl font-bold text-primary-gold uppercase tracking-widest">Resultados
+                                </h3>
+                                <button onclick="toggleSearchPanel(false)" class="search-panel-close-btn"
+                                    title="Cerrar">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37"
+                                        stroke-width="3" stroke-linecap="round">
+                                        <line x1="18" y1="6" x2="6" y2="18" />
+                                        <line x1="6" y1="6" x2="18" y2="18" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div id="spotify-results" class="space-y-3 min-h-[280px]">
+                                <!-- Los resultados se inyectarán aquí -->
+                            </div>
+
+                            <div id="search-pagination" class="search-panel-pagination">
+                                <button id="prev-search-page" class="search-panel-arrow-btn" disabled>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4AF37"
+                                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="15 18 9 12 15 6" />
+                                    </svg>
+                                </button>
+                                <span id="search-page-info" class="search-panel-page-info">Página 1 de 1</span>
+                                <button id="next-search-page" class="search-panel-arrow-btn">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4AF37"
+                                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="9 18 15 12 9 6" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="submit-request" class="btn-premium disabled:opacity-50 disabled:cursor-not-allowed"
+                        disabled>
+                        SOLICITAR
+                    </button>
+                    <div id="cooldown-timer" class="text-xs text-primary-gold/60 text-center mt-3 font-medium h-4">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú de Admin -->
+        <div id="admin-menu" class="hidden space-y-4 flex-grow flex flex-col">
+            <div class="flex justify-between items-center mb-6">
+                <div>
+                    <h2 class="text-2xl font-bold text-white">Panel de Control</h2>
+                    <div id="sse-badge" class="flex items-center gap-1.5 text-xs font-bold text-slate-500 mt-1">
+                        <span class="w-2 h-2 rounded-full bg-slate-500 inline-block"></span> CONECTANDO...
+                    </div>
+                </div>
+                <span id="request-count"
+                    class="bg-primary-gold/10 text-primary-gold text-xs font-bold px-4 py-1.5 rounded-full border border-primary-gold/20">
+                    0 Peticiones
+                </span>
+            </div>
+
+            <div class="flex-grow flex flex-col min-h-0">
+                <div id="no-requests" class="hidden text-center py-12 text-white/20">
+                    <i data-lucide="inbox" class="mx-auto w-12 h-12 mb-2 opacity-20"></i>
+                    <p>No hay peticiones pendientes</p>
+                </div>
+
+                <div id="requests-list" class="space-y-4 overflow-y-auto max-h-[60vh] pr-2">
+                    <!-- Las canciones se cargarán aquí -->
+                </div>
+            </div>
+
+            <!-- Controles de Paginación -->
+            <div id="pagination-controls" class="hidden flex items-center justify-between glass-card !p-4 mt-6">
+                <button id="prev-page" class="p-2 text-primary-gold disabled:opacity-30">
+                    <i data-lucide="chevron-left"></i>
+                </button>
+                <span id="page-info" class="text-sm font-medium text-white/60">Página 1 de 1</span>
+                <button id="next-page" class="p-2 text-primary-gold disabled:opacity-30">
+                    <i data-lucide="chevron-right"></i>
+                </button>
+            </div>
+
+            <button onclick="backToLogin()"
+                class="text-primary-gold text-sm font-medium flex items-center justify-center gap-2 mt-8 hover:underline">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Salir del Panel
+            </button>
+        </div>
+
+    </div>
+
+    <!-- Notificación Toast -->
+    <div id="toast"
+        class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-white text-black px-8 py-4 rounded-full shadow-2xl text-sm font-bold transform translate-y-32 opacity-0 transition-all duration-500 pointer-events-none z-50">
+        PETICIÓN ENVIADA
+    </div>
+
+    <!-- Tu Lógica Javascript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

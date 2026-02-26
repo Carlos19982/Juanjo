@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jukebox - Admin Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.0/lucide.min.js"></script>
+</head>
+
+<body class="bg-slate-900 text-white min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-md w-full bg-slate-800 p-8 rounded-2xl shadow-xl border border-slate-700">
+        <header class="text-center mb-8">
+            <h1 class="text-2xl font-bold text-indigo-400 flex items-center justify-center gap-2">
+                <i data-lucide="shield-check"></i> Acceso Admin
+            </h1>
+            <p class="text-slate-400 text-sm mt-2">Solo personal autorizado</p>
+        </header>
+
+        <form id="login-form" class="space-y-4">
+            <div>
+                <label class="block text-xs font-medium text-slate-400 uppercase mb-1">Usuario</label>
+                <input type="text" id="username" required
+                    class="w-full p-3 bg-slate-900 border border-slate-700 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none transition-all text-white">
+            </div>
+            <div>
+                <label class="block text-xs font-medium text-slate-400 uppercase mb-1">Contraseña</label>
+                <input type="password" id="password" required
+                    class="w-full p-3 bg-slate-900 border border-slate-700 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none transition-all text-white">
+            </div>
+            <button type="submit"
+                class="w-full bg-indigo-600 text-white py-3 rounded-lg font-medium hover:bg-indigo-700 transition-all flex items-center justify-center gap-2 mt-6">
+                Entrar al Panel
+            </button>
+        </form>
+
+        <div id="error-msg" class="hidden mt-4 text-red-400 text-sm text-center"></div>
+
+        <a href="index.html" class="block text-center text-slate-500 text-xs mt-8 hover:text-slate-400">
+            &larr; Volver a la App principal
+        </a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+        });
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMsg = document.getElementById('error-msg');
+
+            try {
+                const response = await fetch('login.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+                const result = await response.json();
+
+                if (result.success && result.role === 'admin') {
+                    // Guardamos el estado y redirigimos
+                    localStorage.setItem('jukebox_role', 'admin');
+                    window.location.href = 'index.html?role=admin';
+                } else {
+                    errorMsg.textContent = result.message || 'Error de acceso';
+                    errorMsg.classList.remove('hidden');
+                }
+            } catch (err) {
+                errorMsg.textContent = 'Error de conexión';
+                errorMsg.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,402 @@
+[2026-02-19 11:59:28] Iniciando login.php
+[2026-02-19 11:59:28] Error DB require: Undefined constant PDO::ATTR_ERRMODE_EXCEPTION
+[2026-02-19 12:00:45] Iniciando login.php
+[2026-02-19 12:00:45] DB incluida
+[2026-02-19 12:00:45] Datos recibidos: Array
+(
+    [username] => s
+)
+
+[2026-02-19 12:01:00] Iniciando login.php
+[2026-02-19 12:01:00] DB incluida
+[2026-02-19 12:01:00] Datos recibidos: Array
+(
+    [username] => admin
+    [password] => admin123
+)
+
+[2026-02-19 12:01:01] Iniciando login.php
+[2026-02-19 12:01:01] DB incluida
+[2026-02-19 12:01:01] Datos recibidos: Array
+(
+    [username] => admin
+    [password] => admin123
+)
+
+[2026-02-19 12:01:04] Iniciando login.php
+[2026-02-19 12:01:04] DB incluida
+[2026-02-19 12:01:04] Datos recibidos: Array
+(
+    [username] => admin
+    [password] => admin123
+)
+
+[2026-02-19 12:01:31] Iniciando login.php
+[2026-02-19 12:01:31] DB incluida
+[2026-02-19 12:01:31] Datos recibidos: Array
+(
+    [username] => admin
+    [password] => admin
+)
+
+[2026-02-19 12:01:33] Iniciando login.php
+[2026-02-19 12:01:33] DB incluida
+[2026-02-19 12:01:33] Datos recibidos: Array
+(
+    [username] => admin
+    [password] => admin123
+)
+
+[2026-02-19 12:01:54] Iniciando login.php
+[2026-02-19 12:01:54] DB incluida
+[2026-02-19 12:01:54] Datos recibidos: Array
+(
+    [username] => admin
+    [password] => admin123
+)
+
+[2026-02-19 12:01:54] Iniciando login.php
+[2026-02-19 12:01:54] DB incluida
+[2026-02-19 12:01:54] Datos recibidos: Array
+(
+    [username] => admin
+    [password] => admin123
+)
+
+[2026-02-19 12:02:04] Iniciando login.php
+[2026-02-19 12:02:04] DB incluida
+[2026-02-19 12:02:04] Datos recibidos: Array
+(
+    [username] => VALUES ('admin', '$2y$10$7rlsBycaSj6A.f.vH.wXUuH.H4rA3W3X6W6r6r6r6r6r6r6r6r6r6', 'admin'); 
+    [password] => admin123
+)
+
+[2026-02-19 12:12:00] Iniciando login.php
+[2026-02-19 12:12:00] DB incluida
+[2026-02-19 12:12:00] Datos recibidos: Array
+(
+    [username] => Juanjo
+    [password] => admin
+)
+
+[2026-02-19 12:12:11] Iniciando login.php
+[2026-02-19 12:12:11] DB incluida
+[2026-02-19 12:12:11] Datos recibidos: Array
+(
+    [username] => Juanjo
+    [password] => admin
+)
+
+[2026-02-19 12:13:23] Iniciando login.php
+[2026-02-19 12:13:23] DB incluida
+[2026-02-19 12:13:23] Datos recibidos: Array
+(
+    [username] => Juanjo
+    [password] => admin
+)
+
+[2026-02-19 12:13:28] Iniciando login.php
+[2026-02-19 12:13:28] DB incluida
+[2026-02-19 12:13:28] Datos recibidos: Array
+(
+    [username] => admin
+    [password] => admin123
+)
+
+[2026-02-19 12:16:09] Iniciando login.php
+[2026-02-19 12:16:09] DB incluida
+[2026-02-19 12:16:09] Datos recibidos: Array
+(
+    [username] => Juanjo 
+    [password] => admin
+)
+
+[2026-02-19 12:23:41] Iniciando login.php
+[2026-02-19 12:23:41] DB incluida
+[2026-02-19 12:23:41] Datos recibidos: Array
+(
+    [username] => carlos
+)
+
+[2026-02-19 12:28:30] Iniciando login.php
+[2026-02-19 12:28:30] DB incluida
+[2026-02-19 12:28:30] Datos recibidos: Array
+(
+    [username] => carlos
+)
+
+[2026-02-19 12:28:55] Iniciando login.php
+[2026-02-19 12:28:55] DB incluida
+[2026-02-19 12:28:55] Datos recibidos: Array
+(
+    [username] => admin
+    [password] => admin
+)
+
+[2026-02-19 12:29:00] Iniciando login.php
+[2026-02-19 12:29:00] DB incluida
+[2026-02-19 12:29:00] Datos recibidos: Array
+(
+    [username] => juanjo
+    [password] => admin
+)
+
+[2026-02-19 12:35:41] Iniciando login.php
+[2026-02-19 12:35:41] DB incluida
+[2026-02-19 12:35:41] Datos recibidos: Array
+(
+    [username] => d
+)
+
+[2026-02-19 12:50:29] Iniciando login.php
+[2026-02-19 12:50:29] DB incluida
+[2026-02-19 12:50:29] Datos recibidos: Array
+(
+    [username] => pepe
+)
+
+[2026-02-19 12:51:13] Iniciando login.php
+[2026-02-19 12:51:13] DB incluida
+[2026-02-19 12:51:13] Datos recibidos: Array
+(
+    [username] => wefwefwerf
+)
+
+[2026-02-19 12:51:38] Iniciando login.php
+[2026-02-19 12:51:38] DB incluida
+[2026-02-19 12:51:38] Datos recibidos: Array
+(
+    [username] => d
+)
+
+[2026-02-24 10:51:10] Iniciando login.php
+[2026-02-24 10:51:10] DB incluida
+[2026-02-24 10:51:10] Datos recibidos: Array
+(
+    [username] => carlos
+)
+
+[2026-02-24 11:00:17] Iniciando login.php
+[2026-02-24 11:00:17] DB incluida
+[2026-02-24 11:00:17] Datos recibidos: Array
+(
+    [username] => Test User
+)
+
+[2026-02-24 11:01:42] Iniciando login.php
+[2026-02-24 11:01:42] DB incluida
+[2026-02-24 11:01:42] Datos recibidos: Array
+(
+    [username] => juanjo
+    [password] => admin
+)
+
+[2026-02-24 11:02:07] Iniciando login.php
+[2026-02-24 11:02:07] DB incluida
+[2026-02-24 11:02:07] Datos recibidos: Array
+(
+    [username] => wefwefwerf
+)
+
+[2026-02-24 11:06:22] Iniciando login.php
+[2026-02-24 11:06:22] DB incluida
+[2026-02-24 11:06:22] Datos recibidos: Array
+(
+    [username] => Test User
+)
+
+[2026-02-24 11:15:27] Iniciando login.php
+[2026-02-24 11:15:27] DB incluida
+[2026-02-24 11:15:27] Datos recibidos: Array
+(
+    [username] => Tester
+)
+
+[2026-02-24 11:47:17] Iniciando login.php
+[2026-02-24 11:47:17] DB incluida
+[2026-02-24 11:47:17] Datos recibidos: Array
+(
+    [username] => juanjo
+    [password] => admin
+)
+
+[2026-02-24 11:47:47] Iniciando login.php
+[2026-02-24 11:47:47] DB incluida
+[2026-02-24 11:47:47] Datos recibidos: Array
+(
+    [username] => carlos
+)
+
+[2026-02-24 11:59:13] Iniciando login.php
+[2026-02-24 11:59:13] DB incluida
+[2026-02-24 11:59:13] Datos recibidos: Array
+(
+    [username] => juanjo
+    [password] => admin
+)
+
+[2026-02-24 11:59:58] Iniciando login.php
+[2026-02-24 11:59:58] DB incluida
+[2026-02-24 11:59:58] Datos recibidos: Array
+(
+    [username] => juanjo
+    [password] => admin
+)
+
+[2026-02-24 12:00:08] Iniciando login.php
+[2026-02-24 12:00:08] DB incluida
+[2026-02-24 12:00:08] Datos recibidos: Array
+(
+    [username] => `pepe
+)
+
+[2026-02-24 12:01:14] Iniciando login.php
+[2026-02-24 12:01:14] DB incluida
+[2026-02-24 12:01:14] Datos recibidos: Array
+(
+    [username] => ss
+)
+
+[2026-02-24 12:02:27] Iniciando login.php
+[2026-02-24 12:02:27] DB incluida
+[2026-02-24 12:02:27] Datos recibidos: Array
+(
+    [username] => carlos
+)
+
+[2026-02-24 17:46:49] Iniciando login.php
+[2026-02-24 17:46:49] DB incluida
+[2026-02-24 17:46:49] Datos recibidos: Array
+(
+    [username] => juanjo
+    [password] => admin
+)
+
+[2026-02-24 17:59:29] Iniciando login.php
+[2026-02-24 17:59:29] DB incluida
+[2026-02-24 17:59:29] Datos recibidos: Array
+(
+    [username] => TestSSE
+)
+
+[2026-02-24 18:01:34] Iniciando login.php
+[2026-02-24 18:01:34] DB incluida
+[2026-02-24 18:01:34] Datos recibidos: Array
+(
+    [username] => pepe
+)
+
+[2026-02-24 18:09:39] Iniciando login.php
+[2026-02-24 18:09:39] DB incluida
+[2026-02-24 18:09:39] Datos recibidos: Array
+(
+    [username] => javi
+)
+
+[2026-02-24 18:10:28] Iniciando login.php
+[2026-02-24 18:10:28] DB incluida
+[2026-02-24 18:10:28] Datos recibidos: Array
+(
+    [username] => Juanjo
+    [password] => admin
+)
+
+[2026-02-24 18:10:44] Iniciando login.php
+[2026-02-24 18:10:44] DB incluida
+[2026-02-24 18:10:44] Datos recibidos: Array
+(
+    [username] => x
+)
+
+[2026-02-24 18:11:26] Iniciando login.php
+[2026-02-24 18:11:26] DB incluida
+[2026-02-24 18:11:26] Datos recibidos: Array
+(
+    [username] => v
+)
+
+[2026-02-24 19:49:10] Iniciando login.php
+[2026-02-24 19:49:10] DB incluida
+[2026-02-24 19:49:10] Datos recibidos: Array
+(
+    [username] => juanjo
+    [password] => admin
+)
+
+[2026-02-24 19:52:21] Iniciando login.php
+[2026-02-24 19:52:21] DB incluida
+[2026-02-24 19:52:21] Datos recibidos: Array
+(
+    [username] => f
+)
+
+[2026-02-24 20:05:08] Iniciando login.php
+[2026-02-24 20:05:08] DB incluida
+[2026-02-24 20:05:08] Datos recibidos: Array
+(
+    [username] => f
+)
+
+[2026-02-24 20:05:09] Iniciando login.php
+[2026-02-24 20:05:09] DB incluida
+[2026-02-24 20:05:09] Datos recibidos: Array
+(
+    [username] => f
+)
+
+[2026-02-24 20:05:10] Iniciando login.php
+[2026-02-24 20:05:10] DB incluida
+[2026-02-24 20:05:10] Datos recibidos: Array
+(
+    [username] => f
+)
+
+[2026-02-24 20:05:10] Iniciando login.php
+[2026-02-24 20:05:10] DB incluida
+[2026-02-24 20:05:10] Datos recibidos: Array
+(
+    [username] => f
+)
+
+[2026-02-24 20:05:12] Iniciando login.php
+[2026-02-24 20:05:12] DB incluida
+[2026-02-24 20:05:12] Datos recibidos: Array
+(
+    [username] => f
+)
+
+[2026-02-24 20:05:15] Iniciando login.php
+[2026-02-24 20:05:15] DB incluida
+[2026-02-24 20:05:15] Datos recibidos: Array
+(
+    [username] => e
+)
+
+[2026-02-24 20:05:25] Iniciando login.php
+[2026-02-24 20:05:25] DB incluida
+[2026-02-24 20:05:25] Datos recibidos: Array
+(
+    [username] => r
+)
+
+[2026-02-24 20:13:20] Iniciando login.php
+[2026-02-24 20:13:20] DB incluida
+[2026-02-24 20:13:20] Datos recibidos: Array
+(
+    [username] => jf
+)
+
+[2026-02-24 20:16:39] Iniciando login.php
+[2026-02-24 20:16:39] DB incluida
+[2026-02-24 20:16:39] Datos recibidos: Array
+(
+    [username] => fx
+)
+
+[2026-02-24 20:17:00] Iniciando login.php
+[2026-02-24 20:17:00] DB incluida
+[2026-02-24 20:17:00] Datos recibidos: Array
+(
+    [username] => ee
+)
+
